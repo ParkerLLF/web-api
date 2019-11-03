@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13 </title>
+</head>
+
+<body>
+
+    <input type="button" value="按钮" id="btn" />
+    <div id="dv1">
+        <p>66666</p>
+        <p>66666</p>
+        <p>66666</p>
+        <p>66666</p>
+        <p>66666</p>
+    </div>
+    <div id="dv2">
+        <p>哈哈哈</p>
+        <p>哈哈哈</p>
+        <p>哈哈哈</p>
+        <p>哈哈哈</p>
+    </div>
+    <script>
+        //document.getElementsByTagName("标签的名字");返回的是一个伪数组,
+        //无论获取的是一个标签,还是多个标签,最终都是在数组中存储的,这行代码的返回值就是一个数组
+
+        //案例:点击按钮设置多个p标签的文字内容
+        //根据id获取按钮,注册点击事件,添加事件处理函数
+        document.getElementById("btn").onclick = function () {
+            // var pObj = document.getElementsByTagName("p");
+            var pObj =document.getElementById("dv1").getElementsByTagName("p");//dv1里面的p标签
+            // console.log(pObj);
+            for (var i = 0; i < pObj.length; i++) {
+                pObj[i].innerText = "都是P";
+            }
+        };
+    </script>
+</body>
+
+</html>

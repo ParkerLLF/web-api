@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>23</title>
+</head>
+
+<body>
+    <input type="button" value="点菜" id="btn">
+    <select name="" id="ss">
+        <option value="1">油炸</option>
+        <option value="2">爆炒</option>
+        <option value="3">清蒸</option>
+        <option value="4" id="op1">红烧</option>
+        <option value="5">白灼</option>
+    </select>
+    <br>
+
+    <script src="common.js"></script>
+    <script>
+        my$("btn").onclick = function(){
+            my$("op1").selected = true;
+        };
+    </script>
+
+    <textarea name="" id="tt" cols="30" rows="10">
+        两个黄鹂鸣翠柳，一行白鹭上青天。
+    </textarea>
+
+    <input type="button" value="注册" id="btn2" >
+    <script>
+        my$("btn2").onclick =function(){
+            // my$("tt").innerText = "666";
+            my$("tt").value = "999";
+        };
+    </script>
+</body>
+
+</html>

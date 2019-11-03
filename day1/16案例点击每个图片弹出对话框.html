@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>16</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/1.jpg" alt="" id="im1">
+    <img src="images/2.jpg" alt="" id="im2">
+    <img src="images/3.jpg" alt="" id="im3">
+
+    <script>
+        var imgObj =document.getElementsByTagName("img");
+        for(var i=0;i<imgObj.length;i++){
+            imgObj[i].onclick=function(){
+                alert("被点击了");
+            }
+        }
+    </script>
+</body>
+
+</html>
