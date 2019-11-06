@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>21</title>
+    <style>
+        ul {
+            list-style: none;
+            /* cursor: pointer; */
+            border: 1px solid #000;
+        }
+
+        ul li {
+            cursor: pointer;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="uu">
+        <!-- score 自定义属性 -->
+        <li score="10">1</li>
+        <li score="20">2</li>
+        <li score="30">3</li>
+        <li score="40">4</li>
+        <li score="50">5</li>
+    </ul>
+
+    <script src="common.js"></script>
+    <script>
+        var list = document.getElementsByTagName("li");
+        for (var i =0;i<list.length;i++) {
+            list[i].onclick = function(){
+                //弹框 undefined ，因为获取到的是DOM里面的对象，一个是标签
+                // alert(this.score);
+                //可以弹框显示
+                alert(this.getAttribute("score"));
+            }
+        };
+    </script>
+</body>
+
+</html>

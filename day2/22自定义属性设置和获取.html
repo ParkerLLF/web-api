@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>22</title>
+</head>
+
+<body>
+    <ul id="uu">
+        <!-- score 自定义属性 -->
+        <li score="10">1</li>
+        <li score="20">2</li>
+        <li score="30">3</li>
+        <li score="40">4</li>
+        <li score="50">5</li>
+    </ul>
+
+    <script src="common.js"></script>
+    <script>
+        //总结:设置自定义属性:setAttribute("属性的名字","属性的值");
+        //获取自定义属性的值:getAttribute("属性的名字")
+
+        //获取所有的li标签,然后为每个标签中动态的添加自定义属性和值
+        //点击的时候获取该标签的自定义属性的值
+
+        var list = my$("uu").getElementsByTagName("li");
+        for (var i = 0; i < list.length; i++) {
+            list[i].setAttribute("score", (i + 1) * 10);
+        }
+    </script>
+</body>
+
+</html>

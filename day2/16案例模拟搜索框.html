@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>16</title>
+    <style>
+        input {
+
+            color: grey;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <input type="text" value="请输入搜索内容" id="txt">
+    <input type="button" value="搜索" id="ss">
+    <input type="button" value="清空" id="btn">
+    <script src="common.js"></script>
+    <script>
+        my$("txt").onfocus = function () {
+            // console.log("youle");
+            //判断是不是默认的内容
+            if (this.value == "请输入搜索内容") {
+                this.value = ""; //等于空 清空输入框
+                this.style.color = "black";
+            }
+        };
+        my$("txt").onblur = function () {
+            // console.log("meile");
+            // if (this.value == "") {
+            //     this.value = "请输入搜索内容"; //还原、
+            //     this.style.color = "grey";
+            // }
+
+            //判读长度效率更高
+            if (this.value.length== 0) {
+                this.value = "请输入搜索内容"; //还原、
+                this.style.color = "grey";
+            }
+        };
+
+        //点击清空按钮 将搜索框中的内容置为空
+        my$("btn").onclick =function(){
+            my$("txt").value = "";
+        };
+    </script>
 </body>
+
 </html>
