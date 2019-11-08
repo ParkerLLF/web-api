@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>10</title>
+	</head>
+
+	<body>
+		<ul id="uu">
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+			<li>555</li>
+		</ul>
+		<script src="common.js"></script>
+		<script>
+			//第一个节点和第一个元素的获取的代码在ie8中可能不支持
+			//获取任意一个父级元素的第一个子级元素
+			function getFirstElementChildByParentElement(element) {
+				if (typeof element.firstElementChild == "undefined") {
+					return element.firstElementChild;
+				} else {
+					var node = element.firstChild;
+					while (node && node.nodeType != 1) {
+						node = node.nextSibling;
+					}
+					return node;
+				}
+			}
+			// 获取任意一个父级元素的最后一个子级元素
+
+
+			//最后一个节点和最后一个元素的获取代码在ie8中可能不支持
+			//前一个节点和前一个元素的获取的代码在ie8中可能不支持
+			//后一个节点和后一个元素的获取的代码在ie8中可能不支持
+		</script>
+	</body>
+
+</html>
