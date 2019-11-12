@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>26</title>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn">
+  <script>
+    function my$(id) {
+      return document.getElementById(id);
+    }
+
+    //为任意元素.绑定任意的事件, 任意的元素,事件的类型,事件处理函数
+    function addEventListener(element, type, fn) {
+      //判断浏览器是否支持这个方法
+      if (element.addEventListener) {
+        element.addEventListener(type, fn, false);
+      } else if (element.attachEvent) {
+        element.attachEvent("on" + type, fn);
+      } else {
+        element["on" + type] = fn;
+      }
+    }
+
+
+
+    // document.getElementById("btn").attachEvent("on" + "click", function () {});
+    // document.getElementById("btn")["on" + "click"] = function () {};
+
+
+
+    // function Person(name) {
+    //   this.name = name;
+    //   this.sayHi = function () {
+    //     console.log("你好");
+    //   };
+    // }
+
+    // var per = new Person("小明");
+    // //判断这个对象中有没有这个方法
+    // if (per.sayHi) {
+    //   per.sayHi();
+    // } else {
+    //   console.log("没有这个方法");
+    // }
+  </script>
+
+</body>
+
+</html>

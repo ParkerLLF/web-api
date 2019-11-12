@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>21</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>21</title>
 </head>
+
 <body>
-    <input type="button" value="显示大图" id="btn"><br>
-    <img src="images/1-small.jpg" alt="" id="im">
+  <input type="button" value="显示大图" id="btn"><br>
+  <img src="images/1-small.jpg" alt="" id="im">
 
-    <script>
-        // 封装后
-        function my$(id){
-            return document.getElementById(id);
-        }
-        my$("btn").onclick=function(){
-            my$("im").src = "images/1.jpg";
-        };
+  <script>
+    // 封装后
+    function my$(id) {
+      return document.getElementById(id);
+    }
+    my$("btn").onclick = function () {
+      my$("im").src = "images/1.jpg";
+    };
 
-        // 封装前的写法
-        // document.getElementById("btn").onclick =function(){
-        //     document.getElementById("im").src ="images/1.jpg";
-        // };
-    </script>
+    // 封装前的写法
+    // document.getElementById("btn").onclick =function(){
+    //     document.getElementById("im").src ="images/1.jpg";
+    // };
+  </script>
 </body>
+
 </html>

@@ -2,33 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>19</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>19</title>
 </head>
 
 <body>
-    <input type="button" value="没怀孕">
-    <input type="button" value="没怀孕">
-    <input type="button" value="没怀孕">
-    <input type="button" value="没怀孕">
-    <input type="button" value="没怀孕">
-    <script>
-        var btnObj = document.getElementsByTagName("input");
-        //循环遍历所有的按钮
-        for (var i = 0; i < btnObj.length; i++) {
-            //把所有的按钮的value值设置为默认值：没怀孕
-            btnObj[i].onclick = function () {
-                for (var j = 0; j < btnObj.length; j++) {
-                    btnObj[j].value = "没怀孕";
-                }
-
-                //当前按钮的值设置为怀孕
-                this.value = "怀孕了";
-            };
+  <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <input type="button" value="没怀孕">
+  <script>
+    var btnObj = document.getElementsByTagName("input");
+    //循环遍历所有的按钮
+    for (var i = 0; i < btnObj.length; i++) {
+      //把所有的按钮的value值设置为默认值：没怀孕
+      btnObj[i].onclick = function () {
+        for (var j = 0; j < btnObj.length; j++) {
+          btnObj[j].value = "没怀孕";
         }
-    </script>
+
+        //当前按钮的值设置为怀孕
+        this.value = "怀孕了";
+      };
+    }
+  </script>
 </body>
 
 </html>

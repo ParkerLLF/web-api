@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>16</title>
+  <style>
+    div {
+      width: 300px;
+      height: 400px;
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="button" value="来个图片" id="btn">
+  <div id="dv"></div>
+  <!-- <img src="images/liuyan.jpg" alt=""> -->
+
+  <script src="common.js"></script>
+  <script>
+    my$("btn").onclick = function () {
+      // document.body.innerHTML = "<p>哈哈哈哈</p>";
+      // document.body.innerHTML = "<img src='images/liuyan.jpg' alt=''>";
+      my$("dv").innerHTML = "<ul> <li> 111 </li> <li> 222 </li> <li> 333 <li> </ul > ";
+    };
+
+    var names = ["111", "222", "333", "444", "555", "666", "777"];
+    my$("btn").onclick = function () {
+      var str = "<ul>";
+      //
+      for (var i = 0; i < names.length; i++) {
+        str += "<li>" + names[i] + "</li>";
+      }
+      str += "</ul>";
+      my$("dv").innerHTML = str;
+
+      //代码执行到这儿，li已经有了
+      //获取所有的li,遍历,添加鼠标进入事件，鼠标离开事件
+      var list = my$("dv").getElementsByTagName("li");
+      for (var i = 0; i < list.length; i++) {
+        list[i].onmouseover = function () {
+          this.style.backgroundColor = "yellow";
+        };
+        list[i].onmouseout = function () {
+          this.style.backgroundColor = "";
+        };
+      }
+    };
+  </script>
+</body>
+
+</html>

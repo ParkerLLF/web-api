@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>09</title>
-	</head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>09</title>
+</head>
 
-	<body>
-		<input type="button" value="变色" id="btn">
-		<ul id="uu">
-			<li>爆炒</li>
-			<li>油炸</li>
-			<li>清真</li>
-			<li>水煮</li>
-			<li>红烧</li>
-			<li>凉拌</li>
-			<li>干煸</li>
-			<li>火锅</li>
-		</ul>
-	</body>
-	<script src="common.js"></script>
-	<script>
-		//隔行变色
+<body>
+  <input type="button" value="变色" id="btn">
+  <ul id="uu">
+    <li>爆炒</li>
+    <li>油炸</li>
+    <li>清真</li>
+    <li>水煮</li>
+    <li>红烧</li>
+    <li>凉拌</li>
+    <li>干煸</li>
+    <li>火锅</li>
+  </ul>
+</body>
+<script src="common.js"></script>
+<script>
+  //隔行变色
 
-		my$("btn").onclick = function () {
-			var count = 0; //记录有多少个li标签
-			var nodes = my$("uu").childNodes;
-			for (var i = 0; i < nodes.length; i++) {
-				//判断这个节点是不是li标签
-				if (nodes[i].nodeType == 1 && nodes[i].nodeName == "LI") {
-					nodes[i].style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
-					count++;
+  my$("btn").onclick = function () {
+    var count = 0; //记录有多少个li标签
+    var nodes = my$("uu").childNodes;
+    for (var i = 0; i < nodes.length; i++) {
+      //判断这个节点是不是li标签
+      if (nodes[i].nodeType == 1 && nodes[i].nodeName == "LI") {
+        nodes[i].style.backgroundColor = count % 2 == 0 ? "red" : "yellow";
+        count++;
 
-				}
-			}
+      }
+    }
 
-		};
-	</script>
+  };
+</script>
 
 </html>

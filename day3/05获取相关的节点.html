@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>05</title>
-	</head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>05</title>
+</head>
 
-	<body>
-		<div id="dv">
-			<span>这是div里面的第一个span标签</span>
-			<p>这是div里面第二个元素，第一个p标签</p>
-			<ul id="uu">
-				<li>111</li>
-				<li>222</li>
-				<li id="three">333</li>
-				<li>444</li>
-				<li>555</li>
-			</ul>
-		</div>
-	</body>
+<body>
+  <div id="dv">
+    <span>这是div里面的第一个span标签</span>
+    <p>这是div里面第二个元素，第一个p标签</p>
+    <ul id="uu">
+      <li>111</li>
+      <li>222</li>
+      <li id="three">333</li>
+      <li>444</li>
+      <li>555</li>
+    </ul>
+  </div>
+</body>
 
-	<script src="common.js"></script>
-	<script>
-		var ulObj = my$("uu");
-		console.log(ulObj.parentNode); //div
-		console.log(ulObj.parentNode.parentNode); //body
-		console.log(ulObj.parentNode.parentNode.parentNode); //html
-		console.log(ulObj.parentNode.parentNode.parentNode.parentNode); //document
-		console.log(ulObj.parentNode.parentNode.parentNode.parentNode.parentNode); //document没有父级元素
+<script src="common.js"></script>
+<script>
+  var ulObj = my$("uu");
+  console.log(ulObj.parentNode); //div
+  console.log(ulObj.parentNode.parentNode); //body
+  console.log(ulObj.parentNode.parentNode.parentNode); //html
+  console.log(ulObj.parentNode.parentNode.parentNode.parentNode); //document
+  console.log(ulObj.parentNode.parentNode.parentNode.parentNode.parentNode); //document没有父级元素
 
 
-		// //ul标签的父级节点
-		// console.log(ulObj.parentNode);
-		// //ul标签的父级元素
-		// console.log(ulObj.parentElement);
+  // //ul标签的父级节点
+  // console.log(ulObj.parentNode);
+  // //ul标签的父级元素
+  // console.log(ulObj.parentElement);
 
-		// console.log(ulObj.parentNode.nodeType);//1  标签的type值
-		// console.log(ulObj.parentNode.nodeName);//DIV  大写的标签名字
-		// console.log(ulObj.parentNode.nodeValue);//unll  标签的value值
-	</script>
+  // console.log(ulObj.parentNode.nodeType);//1  标签的type值
+  // console.log(ulObj.parentNode.nodeName);//DIV  大写的标签名字
+  // console.log(ulObj.parentNode.nodeValue);//unll  标签的value值
+</script>
 
 </html>

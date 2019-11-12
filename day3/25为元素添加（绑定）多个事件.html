@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>25</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn">
+
+  <script src="common.js"></script>
+  <script>
+    //为元素绑定事件（DOM）：一种，但是不兼容，有两种
+
+    //为按钮绑定点击事件
+    /*1. addEventListener("参数1",参数2,参数3) 添加事件监听器
+      ###对象.addEventListener("事件类型",事件处理函数,false)-----谷歌和火狐支持---ie8不支持
+      #参数1：事件的类型---事件的名字，没有on， [click---onclick]
+      #参数2：事件处理函数---函数（命名函数，匿名函数）
+      #参数3：布尔类型---目前就写false
+    */
+    //为同一个元素绑定多个相同的事件
+    document.getElementById("btn").addEventListener("click", function () {
+      console.log("111111");
+    }, false);
+    document.getElementById("btn").addEventListener("click", function () {
+      console.log("222222");
+    }, false);
+    document.getElementById("btn").addEventListener("click", function () {
+      console.log("333333");
+    }, false);
+    document.getElementById("btn").addEventListener("click", function () {
+      console.log("444444");
+    }, false);
+
+    // attachEvent();
+    document.getElementById("btn").attachEvent("click", function () {
+      console.log("谷歌不支持哈，火狐不支持，就ie支持，淦！");
+    });
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>20</title>
+</head>
+
+<body>
+  <input type="button" value="创建列表" id="btn">
+  <div id="dv"></div>
+  <script src="common.js"></script>
+  <script>
+    var num = [111, 222, 333, 444, 555, 666, 777, 888, 999];
+
+    my$("btn").onclick = function () {
+      //创建ul,把ul立刻加入到父级元素中
+      var ulObj = document.createElement("ul");
+      my$("dv").appendChild(ulObj);
+      for (var i = 0; i < num.length; i++) {
+        var liObj = document.createElement("li");
+        //设置li中间的文字内容
+        liObj.innerHTML = num[i];
+        ulObj.appendChild(liObj);
+        //添加鼠标进入事件
+        liObj.onmouseover = onmouseoverHandle;
+        //添加鼠标离开事件
+        liObj.onmouseout = onmouseoutHandle;
+      }
+    };
+
+    function onmouseoverHandle() {
+      this.style.backgroundColor = "red";
+    };
+
+    function onmouseoutHandle() {
+      this.style.backgroundColor = "";
+
+    };
+  </script>
+</body>
+
+</html>
