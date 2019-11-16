@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>06 事件冒泡</title>
+  <style>
+    #dv1 {
+      width: 300px;
+      height: 200px;
+      background-color: red;
+    }
+
+    #dv2 {
+      width: 250px;
+      height: 150px;
+      background-color: green;
+    }
+
+    #dv3 {
+      width: 200px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+  <script>
+    //事件冒泡：多个元素嵌套有层次关系，这些元素都注册了相同事件,如果里面元素的事件触发了，外面的元素的该事件自动触发了   
+  </script>
+</head>
+
+<body>
+  <div id="dv1"> 111
+    <div id="dv2">222
+      <div id="dv3">333</div>
+    </div>
+  </div>
+
+  <script src="common.js"></script>
+  <script>
+    //###事件冒泡---黄金体验### 点击dv3，dv1和dv2都要输出
+
+    //###阻止事件冒泡-----
+    // window.event.canceBubble = ture; ie特有的
+    //e.stopPropagation();谷歌和火狐支持
+    //window.event == e
+
+    document.getElementById("dv1").onclick = function () {
+      console.log(this.id);
+    };
+    document.getElementById("dv2").onclick = function () {
+      console.log(this.id);
+      //###阻止事件冒泡
+      e.stopPropagation();
+    };
+    //##事件处理参数对象---？？？
+    document.getElementById("dv3").onclick = function (e) {
+      console.log(this.id);
+      // console.log(arguments.length); //测这个函数有几个参数---结果：1
+      // console.log(e); //给函数传递参数，再输出参数，看看结果是什么---是一个"对象"---MouseEvent
+      //###阻止事件冒泡
+      window.event.cancelBubble = true;
+    };
+
+
+    // document.body.onclick = function () {
+    //   console.log("diediedie! tags!");
+    // };
+  </script>
+</body>
+
+</html>

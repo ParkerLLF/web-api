@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>10 BOM</title>
+  <style> </style>
+  <script>
+    /*
+    ###JavaScript分三个部分
+    #1.ECMAScript标准--->基本语法
+    #2.DOM--->Document Object Model 文档对象模型，操作页面元素
+    #3.BOM--->Browser Object Model 浏览器对象模型，操作浏览器
+    
+    ##  window--->浏览器中的顶级对象--->皇上
+    ##  document--->页面中的顶级对象--->总管太监
+
+    变量是window的
+
+    */
+
+    var num = 100;
+    console.log(window.num);
+
+    function f1() {
+      console.log("输出");
+    }
+    f1(); //调用f1函数
+    window.f1(); //调用f1函数
+    //### 因为window是浏览器顶级对象，页面中的所有内容都是window的，window就可以省略
+
+    window.document.write("hhhh"); //不需要window.
+    document.write("6666");
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

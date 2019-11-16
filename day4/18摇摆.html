@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>18</title>
+  <style>
+    img {
+      width: 300px;
+      height: 200px;
+    }
+
+    div {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="摇摆" id="btn">
+  <input type="button" value="停止" id="btn1">
+  <div id="dv">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+  </div>
+</body>
+<script>
+  // document.getElementById("btn").onclick = function () {
+  //   //随机数
+  //   var x = Math.random() * 100 + 1;
+  //   x = parseInt(x);
+  //   var y = Math.random() * 100 + 1;
+  //   y = parseInt(y);
+  //   // console.log(num);
+
+  //   document.getElementById("dv").style.left = x + "px";
+  //   document.getElementById("dv").style.top = y + "px";
+  // };
+
+
+  // document.getElementById("btn").onclick = function () {
+  //   //timer是局部变量
+  //   var timer = setInterval(function () {
+  //     //随机数
+  //     var x = Math.random() * 100 + 1;
+  //     x = parseInt(x);
+  //     var y = Math.random() * 100 + 1;
+  //     y = parseInt(y);
+  //     // console.log(x + y);
+
+  //     document.getElementById("dv").style.left = x + "px";
+  //     document.getElementById("dv").style.top = y + "px";
+  //   }, 100);
+  // };
+
+  // document.getElementById("btn1").onclick = function () {
+  //   clearInterval(timer); //用不了 局部变量
+  // };
+
+  //改！！！
+  var timer = "";
+  document.getElementById("btn").onclick = function () {
+    //timer是局部变量
+    timer = setInterval(function () {
+      //随机数
+      var x = Math.random() * 100 + 1;
+      x = parseInt(x);
+      var y = Math.random() * 100 + 1;
+      y = parseInt(y);
+      console.log(x + y);
+
+      document.getElementById("dv").style.left = x + "px";
+      document.getElementById("dv").style.top = y + "px";
+    }, 100);
+  };
+
+  document.getElementById("btn1").onclick = function () {
+    clearInterval(timer); //用不了 局部变量
+  };
+</script>
+
+</html>

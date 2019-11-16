@@ -20,6 +20,15 @@ function getInnerText(element) {
   }
 }
 
+//获取任意元素的中间的文本内容
+function setInnerText(element, text) {
+  if (typeof element.textContent == "undefined") {
+    element.innerText = text;
+  } else {
+    element.textContent = text;
+  }
+}
+
 //获取任意一个父级元素的第一个子级元素
 function getFirstElementChild(element) {
   if (typeof element.firstElementChild == "undefined") {

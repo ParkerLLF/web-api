@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>12</title>
+  <script>
+    //##这段代码执行不了，因为在执行的时候，input标签还没有出现
+    // document.getElementById("btn").onclick = function () {
+    //   alert("你好");
+    // };
+    //----------------------------------------------------------
+
+    //方法 1
+    window.onload = function () {
+      document.getElementById("btn").onclick = function () {
+        alert("你好");
+      };
+    }
+
+    //方法 2 （window可省略） ！！！！重要
+    onload = function () {
+      document.getElementById("btn").onclick = function () {
+        alert("你好");
+      };
+    };
+
+    //扩展的事件----页面关闭后才触发的事件--ie8可以
+    window.onunload = function () {
+      alert("哈哈哈onunload");
+    };
+    //关闭之前触发-----了解----仅ie8支持
+    window.onbeforeunload = function () {
+      alert("hhh");
+    };
+  </script>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn">
+</body>
+
+</html>

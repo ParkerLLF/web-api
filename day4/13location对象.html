@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>13 location</title>
+  <script>
+    // 对象中的属性和方法
+    // ## location对象
+    console.log(location); //输出location对象
+
+    //地址栏上#井号及后边的内容---MDN包含块标识符的DOMString，开头有一个“#”。
+    console.log("" + window.location.hash);
+    //主机名及端口号---包含了域名的一个DOMString，可能在该串最后带有一个":"并跟上URL的端口号。
+    console.log("" + window.location.host);
+    //主机名  返回 web 主机的域名
+    console.log("" + window.location.hostname);
+    //整个URL
+    console.log("" + window.location.href);
+    //端口号  返回 web 主机的端口 （80 或 443）
+    console.log("" + window.location.port);
+    // 返回所使用的 web 协议（http:// 或 https://）
+    console.log("" + window.location.protocol);
+    //文件的路径---相对路径  返回当前页面的路径和文件名
+    console.log("文件路径：" + window.location.pathname);
+    //？问号及后面的内容---搜索的内容
+    console.log("" + window.location.search);
+
+    // console.log("" + window.location.origin);
+
+    onload = function () {
+      document.getElementById("btn").onclick = function () {
+        // 设置跳转的页面的地址
+        location.href = "http://www.baidu.com"; //属性
+        location.assign("http: //www.baidu.com"); //方法---有后退 有历史记录
+        location.replace("http://www.baidu.com"); //没有历史记录
+        location.reload(); //重新加载---刷新
+      };
+    };
+  </script>
+</head>
+
+<body>
+  <input type="button" value="显示效果" id="btn">
+</body>
+
+</html>

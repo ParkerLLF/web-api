@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>17 定时器</title>
+
+</head>
+
+<body>
+  <input type="button" value="清空定时器" id="btn">
+</body>
+
+<script>
+  //BOM中有连个定时器---计时器
+
+  //参数1：函数
+  //参数2：时间 --- 毫秒 
+  //执行过程：页面加载完成后，过了3秒
+  var timerId = setInterval(function () {
+    alert("hhh1");
+  }, 3000); //1000毫秒==1秒---->3秒
+
+  document.getElementById("btn").onclick = function () {
+    //点击按钮，停止定时器
+    //参数：要清除的定时器的id值
+    window.clearInterval(timerId);
+  };
+</script>
+
+</html>

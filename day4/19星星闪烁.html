@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>19</title>
+  <style>
+    div {
+      width: 600px;
+      height: 600px;
+      border: 2px solid gold;
+      background-color: #000;
+      position: relative;
+    }
+
+    span {
+      font-size: 30px;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="button" value="亮起来" id="btn">
+  <div id="dv"></div>
+</body>
+<script>
+  document.getElementById("btn").onclick = function () {
+    setInterval(function () {
+      document.getElementById("dv").innerHTML = "<span>✨</span>";
+      //随机数
+      var x = Math.random() * 550 + 1;
+      x = parseInt(x);
+      var y = Math.random() * 550 + 1;
+      y = parseInt(y);
+      document.getElementById("dv").firstElementChild.style.left = x + "px";
+      document.getElementById("dv").firstElementChild.style.top = y + "px";
+    }, 10);
+
+
+  };
+</script>
+
+</html>
