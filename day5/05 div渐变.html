@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>05</title>
+  <style>
+    div {
+      width: 300px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dv" style="opacity: 1;"></div>
+  <input type="button" value="渐变" id="btn">
+
+  <script src="common.js"></script>
+  <script>
+    //获取id=btn的元素，注册点击事件
+    document.getElementById("btn").onclick = function () {
+      //声明变量 opacity（不透明） 
+      var opacity = 10;
+      var timer = setInterval(function () {
+        //自减
+        opacity--;
+        //如果小于0，就删除定时器timer
+        if (opacity <= 0) {
+          clearInterval(timer);
+        }
+        //设置id为dv的div的opacity值---> 1 -> 0.9 -> 0.8 -> 0.7 ....-> 0.1 -> 0
+        document.getElementById("dv").style.opacity = opacity / 10;
+      }, 200); //设置时间间隔为200毫秒==0.2秒
+    };
+  </script>
+</body>
+
+</html>

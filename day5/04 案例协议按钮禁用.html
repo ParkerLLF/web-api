@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>04</title>
+</head>
+
+<body>
+  <textarea name="texta" id="" cols="30" rows="10">11111111111111111</textarea>
+  <input type="button" value="请仔细阅读协议(5)" id="btn" disabled="disabled">
+
+  <script>
+    // document.getElementById("btn").onclick = function () {
+    // };
+    //声明变量 ，并赋值 ，且与button标签的value值保持一致
+    var time = 5;
+    //添加timer定时器，间隔1000ms == 1s
+    var timer = setInterval(function () {
+      //自减
+      time--;
+      document.getElementById("btn").value = "请仔细阅读协议(" + time + ")"
+      //如果time小于0，改变button的value值 和 解除禁用（disabled）
+      if (time <= 0) {
+        clearInterval(timer);
+        document.getElementById("btn").value = "同意";
+        document.getElementById("btn").disabled = false;
+      }
+    }, 1000);
+  </script>
+
+</body>
+
+</html>

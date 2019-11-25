@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>12</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    /*取消图片底部3像素距离*/
+    .box {
+      width: 730px;
+      height: 454px;
+      margin: 100px auto;
+      background-color: pink;
+      border: 1px solid red;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box ul li {
+      float: left;
+    }
+
+    .box ul {
+      width: 3650px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="screen">
+    <ul>
+      <li><img src="images/1.jpg" alt="" /></li>
+      <li><img src="images/2.jpg" alt="" /></li>
+      <li><img src="images/3.jpg" alt="" /></li>
+      <li><img src="images/4.jpg" alt="" /></li>
+      <li><img src="images/1.jpg" alt="" /></li>
+    </ul>
+  </div>
+  <script>
+    var current = 0;
+
+    function f1() {
+      var ulObj = document.getElementById("screen").children[0];
+      current -= 10;
+      if (current < -2920) {
+        ulObj.style.left = 0 + "px";
+        current = 0;
+      } else {
+        ulObj.style.left = current + "px";
+      }
+    }
+
+    var timer = setInterval(f1, 100);
+
+    document.getElementById("screen").onmouseover = function () {
+      //停止
+      clearInterval(timer);
+    };
+    document.getElementById("screen").onmouseout = function () {
+      //继续，重新开启一个计时器
+      timer = setInterval(f1, 100);
+    };
+  </script>
+</body>
+
+</html>

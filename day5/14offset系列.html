@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>14</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    input {
+      top: 250px;
+      position: absolute;
+    }
+
+    #dv1 {
+      width: 200px;
+      height: 150px;
+      background-color: red;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+
+    #dv2 {
+      width: 100px;
+      height: 50px;
+      background-color: aqua;
+    }
+  </style>
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <div id="dv1">
+    <div id="dv2"></div>
+  </div>
+
+  <input type="button" value="按钮" id="btn">
+
+  <script>
+    document.getElementById("btn").onclick = function () {
+      //这两种方式不能够获取到<style></style>标签里的值
+      //在style属性里面设置的样式是可以获取到的
+      // 比如：<div id="dv1" style="width:200px"></div>
+      // console.log(document.getElementById("dv1").style.width);
+      // console.log(document.getElementById("dv1").style.height);
+
+      //获取元素的宽和高，应该使用offset系列来获取
+      /*
+      offsetWidth：获取元素的宽
+      offsetHeight：获取元素的高
+      offsetleft：获取元素距离左边位置的值
+      offsetTop：获取元素距离上面位置的值
+       
+       */
+      console.log(document.getElementById("dv1").offsetWidth) //结果是数字类型
+      console.log(document.getElementById("dv1").offsetHeight)
+      console.log(document.getElementById("dv1").offsetLeft)
+      console.log(document.getElementById("dv1").offsetTop)
+
+
+    };
+  </script>
+</body>
+
+</html>

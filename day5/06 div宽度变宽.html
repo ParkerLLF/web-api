@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>06</title>
+  <style>
+    div {
+      width: 10px;
+      height: 20px;
+      background-color: gold;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="dv">
+
+  </div>
+  <input type="button" value="变宽" id="btn">
+
+  <script src="common.js"></script>
+  <script>
+    document.getElementById("btn").onclick = function () {
+      //声明变量width，赋予初值10.保持与style标签中设置的一样
+      var width = 10;
+      var timer = setInterval(function () {
+        // width++;//每次加1 太慢了
+        width += 10;
+        //宽度超过400px 就删除timer定时器。
+        if (width >= 400) {
+          clearInterval(timer);
+        }
+        //设置id=dv的div的宽度，
+        document.getElementById("dv").style.width = width + "px";
+
+      }, 100); //设置间隔时间为100毫秒==0.1秒
+    };
+  </script>
+</body>
+
+</html>
